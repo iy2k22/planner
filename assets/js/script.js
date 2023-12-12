@@ -21,14 +21,18 @@ $(document).ready(() => {
         if (firstFill)
             tasks[dateStr][timeStr] = "";
         const newBlock = $("<div></div>");
-        newBlock.addClass("row time-block");
+        newBlock.addClass("row justify-content-between hour time-block");
         const timeLabel = $("<label></label>");
         timeLabel.text(timeStr);
-        timeLabel.addClass("hour");
+        timeLabel.addClass("col-lg-2 col-md-2 col-sm-12");
         newBlock.append(timeLabel);
         const taskArea = $("<textarea></textarea>");
+        taskArea.addClass("col-lg-8 col-md-8 col-sm-12")
         const saveBtn = $("<button></button>");
-        saveBtn.addClass("saveBtn");
+        saveBtn.addClass("saveBtn col-lg-2 col-md-2 col-sm-12");
+        const icon = $("<i></i>");
+        icon.addClass("fas fa-pencil-alt");
+        saveBtn.append(icon);
         if (!firstFill)
             taskArea.text(tasks[dateStr][timeStr]);
         if (i < currentHour) {
